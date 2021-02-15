@@ -391,9 +391,6 @@ export function createDataGridRowTemplate(prefix: string): ViewTemplate;
 export function createDataGridTemplate(prefix: string): ViewTemplate;
 
 // @public (undocumented)
-export function createPickerInputTemplate(prefix: string): ViewTemplate;
-
-// @public (undocumented)
 export function createPickerListTemplate(prefix: string): ViewTemplate;
 
 // @public
@@ -1291,7 +1288,7 @@ export class Picker extends FASTElement {
     // (undocumented)
     handleFocusOut: (e: FocusEvent) => void;
     // (undocumented)
-    handleInputKeyDown: (e: KeyboardEvent) => void;
+    handleInputKeyDown: (e: KeyboardEvent) => boolean;
     // (undocumented)
     handleOptionClick: (e: MouseEvent) => boolean;
     // (undocumented)
@@ -1317,8 +1314,6 @@ export class Picker extends FASTElement {
     // @internal (undocumented)
     optionTemplate: ViewTemplate;
     // @internal (undocumented)
-    pickerinputtag: string;
-    // @internal (undocumented)
     pickermenutag: string;
     // @internal (undocumented)
     region: AnchoredRegion;
@@ -1333,10 +1328,6 @@ export class Picker extends FASTElement {
     }
 
 // @public
-export class PickerInput extends FASTElement {
-}
-
-// @public
 export class PickerList extends FASTElement {
 }
 
@@ -1344,9 +1335,21 @@ export class PickerList extends FASTElement {
 export class PickerMenu extends FASTElement {
     // @internal (undocumented)
     connectedCallback(): void;
+    // @internal (undocumented)
+    footerElements: HTMLElement[];
+    // (undocumented)
+    footerElementsChanged(): void;
+    // @internal (undocumented)
+    headerElements: HTMLElement[];
+    // (undocumented)
+    headerElementsChanged(): void;
+    // @internal (undocumented)
+    menuElements: HTMLElement[];
+    // (undocumented)
+    menuElementsChanged(): void;
     // @internal
     optionElements: HTMLElement[];
-}
+    }
 
 // @public
 export const ProgressRingTemplate: import("@microsoft/fast-element").ViewTemplate<BaseProgress, any>;
